@@ -1,0 +1,33 @@
+:root{--bg:#1b1410;--panel:#261c16;--card:#f3e9db;--ink:#2b1d14;--muted:#7a6656;--gold:#e0a24a;--line:#3b2d24}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--card);font:16px/1.5 Outfit,system-ui,sans-serif}
+.page{max-width:1180px;margin:0 auto;padding:40px 5vw 80px}
+header h1{font:400 clamp(2rem,5vw,3.2rem)/1.1 "Young Serif",Georgia,serif;margin:0;color:var(--gold)}
+header p{margin:6px 0 28px;color:#c9b7a3}
+.layout{display:grid;grid-template-columns:1fr 290px;gap:28px;align-items:start}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+input,select{font:inherit;padding:9px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--panel);color:var(--card)}
+input{flex:1;min-width:180px}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);color:var(--ink);border-radius:14px;padding:18px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:.75rem;background:#e4d3bb;padding:2px 9px;border-radius:99px}
+.card h3{font:400 1.2rem "Young Serif",Georgia,serif;margin:12px 0 4px}
+.score{margin:0 0 8px}.score strong{font-size:1.5rem}.score small{color:var(--muted)}
+.stars{display:flex;gap:2px}
+.stars button{background:none;border:0;font-size:1.7rem;line-height:1;color:#cdbba3;cursor:pointer;padding:2px}
+.stars button.on{color:var(--gold)}
+.stars button:disabled{opacity:.5;cursor:wait}
+.flash{font-size:.82rem;color:var(--muted);margin:6px 0 0;min-height:1.3em}
+.board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;position:sticky;top:20px}
+.board h2{font:400 1.4rem "Young Serif",Georgia,serif;margin:0 0 12px;color:var(--gold)}
+.board ol{list-style:none;margin:0;padding:0}
+.board li{display:flex;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.rank{width:26px;height:26px;border-radius:50%;background:var(--gold);color:#241a12;display:grid;place-items:center;font-weight:600;font-size:.85rem;flex:none}
+.name{flex:1;display:flex;flex-direction:column}
+.pts{text-align:right;font-weight:600;display:flex;flex-direction:column}
+small{color:#a89480;font-weight:400;font-size:.75rem}
+.hint{font-size:.78rem;color:#a89480;margin:10px 0 0}
+.status{color:#c9b7a3}.status.error{color:#ffb4ab}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.board{position:static;order:-1}}
