@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
 async function api(url, options) {
-  const res = await fetch(url, options);
+  const res = await fetch(`${API_BASE_URL}${url}`, options);
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || 'Request failed');
   return data;
